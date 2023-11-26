@@ -6,6 +6,7 @@
 </script>
 <template>
     <h1>Home</h1>
+    <p>test</p>
     <div v-if="allProducts" v-for="product in allProducts.allProducts" :key="product.id">
         <!-- {{ product }}  -->
         <div v-for="gallery in product.productGallery" :key="product.productGallery.id">
