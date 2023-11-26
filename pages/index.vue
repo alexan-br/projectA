@@ -1,4 +1,18 @@
+<script setup>
+    import productData from '@/cms/queries/productData';
+    
+    const { data: allProducts, pending: productPending, error:productError } = await useLazyAsyncQuery(productData);
+    
+</script>
 <template>
-    <AppHeader></AppHeader>
     <h1>Home</h1>
+    <div v-if="allProducts" v-for="product in allProducts.allProducts" :key="product.id">
+        <!-- {{ product }}  -->
+        <div v-for="gallery in product.productGallery" :key="product.productGallery.id">
+            {{ gallery.gallery }}
+            <div v-for="url in gallery.gallery" :key="gallery.gallery.id">
+                {{ url.url }}
+            </div>
+        </div>
+    </div>
 </template>
