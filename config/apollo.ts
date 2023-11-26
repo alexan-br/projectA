@@ -1,6 +1,6 @@
 import { graphqlEndpoint } from './cms';
 
-const isProd = process.env.NETLIFY_ENV === 'production'
+const isProd = process.env.NETLIFY_ENV === 'staging'
 
 import { defineApolloClient } from '@nuxtjs/apollo'
 
