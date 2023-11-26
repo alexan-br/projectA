@@ -10,10 +10,9 @@
     <div v-if="allProducts" v-for="product in allProducts.allProducts" :key="product.id">
         <!-- {{ product }}  -->
         <div v-for="gallery in product.productGallery" :key="product.productGallery.id">
-            {{ gallery.gallery }}
-            <div v-for="url in gallery.gallery" :key="gallery.gallery.id">
-                {{ url.url }}
-            </div>
+            <!-- {{ gallery.gallery }} -->
+            <img v-for="url in gallery.gallery" :key="gallery.gallery.id" :src="url.url">
+                <!-- {{ url.url }} -->
         </div>
     </div>
 </template>
