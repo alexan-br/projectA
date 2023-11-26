@@ -1,12 +1,16 @@
 <script setup>
     import productData from '@/cms/queries/productData';
-    
-    const { data: allProducts, pending: productPending, error:productError } = await useLazyAsyncQuery(productData);
-    const handleImageError = (url) => {
-  console.error('Error loading image:', url);
-  // Handle image loading error as needed
-};
-console.log('After query execution');
+
+    try {
+  console.log('Before query execution');
+  const { data: allProducts, pending: productPending, error: productError } = await useLazyAsyncQuery(productData);
+  console.log('After query execution');
+  console.log('allProducts:', allProducts);
+  console.log('productPending:', productPending);
+  console.log('productError:', productError);
+} catch (error) {
+  console.error('Error during query execution:', error);
+}
 </script>
 <template>
     <h1>Home</h1>
