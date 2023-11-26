@@ -1,5 +1,6 @@
 <script setup>
     import productData from '@/cms/queries/productData';
+    const { data: allProducts, pending: productPending, error: productError } = await useLazyAsyncQuery(productData);
 
     try {
   console.log('Before query execution');

@@ -8,10 +8,10 @@ export default defineNuxtConfig({
     '@nuxtjs/apollo'
   ],
   runtimeConfig: {
-    isProd: process.env.NETLIFY_ENV === 'production',
+    isProd: process.env.NETLIFY_ENV === 'staging',
     datoToken: process.env.NUXT_DATO_TOKEN,
     public: {
-      isProd: process.env.NETLIFY_ENV === 'production',
+      isProd: process.env.NETLIFY_ENV === 'staging',
       datoToken : process.env.NUXT_DATO_TOKEN
     }
   },
