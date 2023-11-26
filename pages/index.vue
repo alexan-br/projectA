@@ -6,6 +6,7 @@
   console.error('Error loading image:', url);
   // Handle image loading error as needed
 };
+console.log('After query execution');
 </script>
 <template>
     <h1>Home</h1>
