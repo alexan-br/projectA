@@ -4,8 +4,8 @@
 
 </script>
 <template>
-    <h1>Home</h1>
-    <p>test</p>
+    <h1>ProjectA</h1>
+    <p>Be different</p>
     <div v-if="allProducts" v-for="product in allProducts.allProducts" :key="product.id" class="product-card">
         <img v-if="product.productGallery.length > 0" :src="product.productGallery[0].gallery[0].url" :alt="product.productTitle" @error="handleImageError(product.productGallery[0].url)">
         <h2>{{ product.productTitle }}</h2>
