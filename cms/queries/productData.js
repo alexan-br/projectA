@@ -3,6 +3,8 @@ query productQuery {
   allProducts {
     productTitle
     productDesc
+    productPrice
+    productSlug
     id
     productBrand {
       brandName {
