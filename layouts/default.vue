@@ -10,6 +10,7 @@
     *{
         box-sizing: border-box;
         scroll-behavior: smooth;
+        margin: 0;
     }
 
     body{
@@ -22,5 +23,10 @@
             align-items: center;
             border-bottom: 1px solid $white;
         }
+    }
+    a{
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
     }
 </style>
