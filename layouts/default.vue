@@ -1,5 +1,17 @@
+<script setup>
+useHead({
+  title: 'ProjectA',
+  meta: [
+    { name: 'description', content: 'Here is the future of simple dressing' }
+  ],
+  htmlAttrs: {
+    lang: 'en'
+  }
+})
+</script>
 <template>
     <div>
+        <HeaderComponent />
         <NuxtPage/>
     </div>
 </template>
@@ -10,6 +22,7 @@
     *{
         box-sizing: border-box;
         scroll-behavior: smooth;
+        margin: 0;
     }
 
     body{
@@ -22,5 +35,10 @@
             align-items: center;
             border-bottom: 1px solid $white;
         }
+    }
+    a{
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
     }
 </style>
