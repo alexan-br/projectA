@@ -1,5 +1,14 @@
+<script setup>
+useHead({
+  title: 'ProjectA',
+  meta: [
+    { name: 'description', content: 'Here is the future of simple dressing' }
+  ],
+})
+</script>
 <template>
     <div>
+        <HeaderComponent />
         <NuxtPage/>
     </div>
 </template>

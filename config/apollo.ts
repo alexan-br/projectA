@@ -1,17 +1,17 @@
 import { graphqlEndpoint } from './cms';
 
-const isProd = process.env.NETLIFY_ENV === 'production'
+const isProd = process.env.NETLIFY_ENV === 'production';
+const isServer = process.server;
 
-import { defineApolloClient } from '@nuxtjs/apollo'
-
-export default defineApolloClient({
+export default {
     httpEndpoint: graphqlEndpoint,
     httpLinkOptions: {
         headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json',
-            ...(!isProd && {'X-Include-Drafts': 'true'})
-        }
+            ...(!isServer && !isProd && { 'X-Include-Drafts': 'true' }),
+            ...(isServer ? {} : { Authorization: `Bearer ${process.env.NUXT_DATO_TOKEN}` }),
+        },
     },
     connectToDevTools: false,
     defaultOptions: {},
@@ -19,5 +19,5 @@ export default defineApolloClient({
     tokenName: 'apollo:my-app.token',
     tokenStorage: 'cookie',
     authType: 'Bearer',
-    authHeader: 'Authorization'
-})
+    authHeader: 'Authorization',
+};
