@@ -4,6 +4,9 @@ useHead({
   meta: [
     { name: 'description', content: 'Here is the future of simple dressing' }
   ],
+  htmlAttrs: {
+    lang: 'en'
+  }
 })
 </script>
 <template>

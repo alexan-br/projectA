@@ -6,7 +6,7 @@
 <template v-if="!productPending">
     <h1>ProjectA</h1>
     <p>Be different</p>
-    <div v-if="allProducts" v-for="product in allProducts.allProducts" :key="product.id">
+    <div v-if="allProducts" v-for="product in allProducts.allProducts" :key="product.id" class="product-list">
       <NuxtLink :to="`/products/${product.productSlug}`">
         <div class="product-card">
           <img v-if="product.productGallery.length > 0" :src="product.productGallery[0].gallery[0].url" :alt="product.productTitle" @error="handleImageError(product.productGallery[0].url)">
@@ -27,8 +27,12 @@
     </div>
 </template>
 <style lang="scss">
+  a {
+    display: block !important;
+  }
   .product-card{
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
